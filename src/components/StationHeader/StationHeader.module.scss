@@ -1,10 +1,7 @@
-.appWrapper {
-  display: flex;
-  justify-content: center;
-}
+@import "../../scss/colors.scss";
 
 .stationHeader {
-  background-color: #edad61;
+  background-color: $secondaryYellow;
   display: flex;
   justify-content: space-between;
   align-items: center;
