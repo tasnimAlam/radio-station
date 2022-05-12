@@ -1,0 +1,22 @@
+@import "../../scss/colors.scss";
+
+.bottomBarContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: $primaryGray;
+  padding: 1rem;
+  border-radius: 0 0 2rem 2rem;
+  border-bottom: $darkerGray;
+  width: 30rem;
+  box-sizing: border-box;
+  min-height: 6rem;
+}
+
+.bottomBarTitle {
+  color: $secondaryYellow;
+}
+
+.currentFM {
+  color: $lighterGray;
+}
