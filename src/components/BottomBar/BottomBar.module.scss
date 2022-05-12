@@ -1,6 +1,6 @@
 @import "../../scss/colors.scss";
 
-.bottomBarContainer {
+.container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -10,10 +10,10 @@
   border-bottom: $darkerGray;
   width: 30rem;
   box-sizing: border-box;
-  min-height: 6rem;
+  min-height: 7rem;
 }
 
-.bottomBarTitle {
+.title {
   color: $secondaryYellow;
 }
 

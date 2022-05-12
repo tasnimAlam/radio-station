@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
   color: $lighterGray;
-	border-color: $lighterGray;
+  border-color: $lighterGray;
   border-bottom: 2px solid;
-	padding: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }

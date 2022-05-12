@@ -1,13 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export interface IStation {
-  id: number;
-  name: string;
-  number: number;
-}
+import { IStation } from "../interfaces/station";
 
 interface StationState {
   names: IStation[];
+  currentFM: null | string;
 }
 
 const initialState: StationState = {
@@ -18,6 +14,7 @@ const initialState: StationState = {
     { id: 4, name: "Ballads FM", number: 87.1 },
     { id: 5, name: "Maximum FM", number: 142.2 },
   ],
+  currentFM: null,
 };
 
 export const stationSlice = createSlice({
@@ -27,9 +24,12 @@ export const stationSlice = createSlice({
     setStations: (state, action: PayloadAction<IStation>) => {
       state.names.push(action.payload);
     },
+    setCurrent: (state, action: PayloadAction<string>) => {
+      state.currentFM = action.payload;
+    },
   },
 });
 
-export const { setStations } = stationSlice.actions;
+export const { setStations, setCurrent } = stationSlice.actions;
 
 export default stationSlice.reducer;

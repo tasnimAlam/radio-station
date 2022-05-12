@@ -8,6 +8,7 @@ import { StationHeader } from "./components/StationHeader/StationHeader";
 
 function App() {
   const stations = useSelector((state: RootState) => state.stations.names);
+  const currentFM = useSelector((state: RootState) => state.stations.currentFM);
 
   return (
     <div className="appContainer">
@@ -17,7 +18,7 @@ function App() {
           <StationCard key={station.id} {...station} />
         ))}
       </div>
-      <BottomBar currentFM="Putin FM" />
+      <BottomBar currentFM={currentFM} />
     </div>
   );
 }
