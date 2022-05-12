@@ -4,9 +4,9 @@ import style from "./StationHeader.module.scss";
 export const StationHeader = () => {
   return (
     <div className={style.stationHeader}>
-      <img className={style.icon} src="back-arrow.png" />
+      <img className={style.icon} src="back-arrow.png" alt="back-arrow" />
       <h2>Stations</h2>
-      <img className={style.icon} src="switch.png" />
+      <img className={style.icon} src="switch.png" alt="back-arrow" />
     </div>
   );
 };
