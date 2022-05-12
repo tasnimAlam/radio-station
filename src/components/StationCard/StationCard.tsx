@@ -1,19 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setCurrent } from "../../feature/stationSlice";
-import { IStation } from "../../interfaces/station";
-import style from "./StationCard.module.scss";
+import styles from "./StationCard.module.scss";
 
-export const StationCard = (station: IStation) => {
-  const dispatch = useDispatch();
-
+export const StationCard = () => {
   return (
-    <div
-      className={style.stationList}
-      onClick={() => dispatch(setCurrent(station.name))}
-    >
-      <span>{station.name}</span>
-      <span>{station.number}</span>
+    <div className={styles.container}>
+      <img className={styles.minusIcon} src="minus.png" />
+      <img className={styles.fmLogo} src="fm_logo.svg" />
+      <img className={styles.plusIcon} src="plus.png" />
     </div>
   );
 };

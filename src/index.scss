@@ -11,6 +11,11 @@ html {
     font-size: 1.6rem;
     background-color: $darkestGray;
   }
+	
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent; 
+  }
 
   p {
     font-size: 1.6rem;

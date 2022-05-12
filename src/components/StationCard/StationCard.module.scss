@@ -1,11 +1,27 @@
 @import "../../scss/colors.scss";
 
-.stationList {
+.container {
   display: flex;
   justify-content: space-between;
-  color: $lighterGray;
-  border-color: $lighterGray;
-  border-bottom: 2px solid;
-  padding: 1rem;
+  align-items: center;
+	padding: 1rem;
+}
+
+.plusIcon {
   cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+}
+
+.minusIcon {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+}
+
+.fmLogo {
+  width: 15rem;
+  border-radius: 50%;
+	border: 2px solid; 
+	border-color: $lighterGray;
 }
