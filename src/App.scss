@@ -1,4 +1,17 @@
-.appWrapper {
+@import "scss/colors";
+
+.appContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30rem;
+  margin: auto;
+}
+
+.stationContainer {
+  background-color: $secondaryYellow;
+  height: 300px;
+  overflow: auto;
+  width: 30rem;
 }

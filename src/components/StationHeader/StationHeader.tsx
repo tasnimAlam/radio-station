@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./StationHeader.module.scss";
+import style from "./StationHeader.module.scss";
 
 export const StationHeader = () => {
 	return (
-		<div className={styles.stationHeader}>
-			<img src="back-arrow.png" />
+		<div className={style.stationHeader}>
+			<img className={style.icon} src="back-arrow.png" />
 			<h2>Stations</h2>
-			<img src="switch.png" />
+			<img className={style.icon} src="switch.png" />
 		</div>
 	);
 };

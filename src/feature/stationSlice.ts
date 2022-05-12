@@ -1,21 +1,38 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export interface IStation {
+	id: number;
+	name: string;
+	number: number;
+}
+
 interface StationState {
-  names: string[];
+	names: IStation[];
 }
 
 const initialState: StationState = {
-  names: ["One", "Two"],
+	names: [
+		{
+			id: 1,
+			name: "One",
+			number: 1,
+		},
+		{
+			id: 2,
+			name: "Two",
+			number: 2,
+		},
+	],
 };
 
 export const stationSlice = createSlice({
-  name: "stations",
-  initialState,
-  reducers: {
-    setStations: (state, action: PayloadAction<string>) => {
-      state.names.push(action.payload);
-    },
-  },
+	name: "stations",
+	initialState,
+	reducers: {
+		setStations: (state, action: PayloadAction<IStation>) => {
+			state.names.push(action.payload);
+		},
+	},
 });
 
 export const { setStations } = stationSlice.actions;

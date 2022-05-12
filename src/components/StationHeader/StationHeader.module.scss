@@ -1,9 +1,19 @@
 @import "../../scss/colors.scss";
 
 .stationHeader {
+  border-radius: 2rem 2rem 0 0;
   background-color: $secondaryYellow;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20rem;
+  width: 30rem;
+}
+
+.icon {
+  height: 2.5rem;
+  padding: 2rem;
+}
+
+h2 {
+  color: white;
 }
