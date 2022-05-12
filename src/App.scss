@@ -10,8 +10,10 @@
 }
 
 .stationContainer {
-  background-color: $secondaryYellow;
+  background-color: $secondaryGray;
   height: 300px;
   overflow: auto;
   width: 30rem;
+	box-sizing: border-box;
+	padding: 1rem;
 }

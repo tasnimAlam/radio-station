@@ -13,7 +13,7 @@ function App() {
 			<StationHeader />
 			<div className="stationContainer">
 				{stations.map((station) => (
-					<StationCard key={station.id} name={station.name} />
+					<StationCard key={station.id} {...station}/>
 				))}
 			</div>
 		</div>
