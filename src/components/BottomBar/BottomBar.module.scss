@@ -3,9 +3,10 @@
 .container {
   display: flex;
   flex-direction: column;
+	justify-content:center;
   text-align: center;
   background-color: $primaryGray;
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 0 0 4rem 4rem;
   border-bottom: $darkerGray;
   width: 64rem;

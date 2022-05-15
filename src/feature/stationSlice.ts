@@ -25,7 +25,8 @@ export const stationSlice = createSlice({
       state.names.push(action.payload);
     },
     setCurrent: (state, action: PayloadAction<string>) => {
-      state.currentFM = action.payload;
+      state.currentFM =
+        action.payload === state.currentFM ? null : action.payload;
     },
   },
 });

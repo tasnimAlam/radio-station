@@ -9,7 +9,7 @@ export const StationItem = (station: IStation) => {
 
   return (
     <div
-      className={style.stationList}
+      className={style.list}
       onClick={() => dispatch(setCurrent(station.name))}
     >
       <span>{station.name}</span>
