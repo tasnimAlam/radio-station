@@ -1,13 +1,20 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.scss";
-import { RootState } from "./app/store";
+import { AppDispatch, RootState } from "./app/store";
 import { BottomBar } from "./components/BottomBar/BottomBar";
 import { StationItem } from "./components/StationItem/StationItem";
 import { StationHeader } from "./components/StationHeader/StationHeader";
 import { StationCard } from "./components/StationCard/StationCard";
+import { getStations } from "./feature/stationSlice";
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(getStations());
+  }, [dispatch]);
+
   const stations = useSelector((state: RootState) => state.stations.names);
   const currentFM = useSelector((state: RootState) => state.stations.currentFM);
 
@@ -16,10 +23,10 @@ function App() {
       <StationHeader />
       <div className="stationContainer">
         {stations.map((station) => (
-          <>
-            <StationItem key={station.id} {...station} />
+          <div key={station.id}>
+            <StationItem {...station} />
             {currentFM && currentFM === station.name && <StationCard />}
-          </>
+          </div>
         ))}
       </div>
       <BottomBar currentFM={currentFM} />

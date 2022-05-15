@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { IStation } from "../interfaces/station";
 
 interface StationState {
@@ -7,15 +7,20 @@ interface StationState {
 }
 
 const initialState: StationState = {
-  names: [
-    { id: 1, name: "Putin FM", number: 66.6 },
-    { id: 2, name: "Dribble FM", number: 101.2 },
-    { id: 3, name: "Doge FM", number: 99.4 },
-    { id: 4, name: "Ballads FM", number: 87.1 },
-    { id: 5, name: "Maximum FM", number: 142.2 },
-  ],
+  names: [],
   currentFM: null,
 };
+
+const URL = "data.json";
+
+export const getStations = createAsyncThunk(
+  "stations/getStations",
+  async () => {
+    const response = await fetch(URL);
+
+    return (await response.json()) as IStation[];
+  }
+);
 
 export const stationSlice = createSlice({
   name: "stations",
@@ -28,6 +33,18 @@ export const stationSlice = createSlice({
       state.currentFM =
         action.payload === state.currentFM ? null : action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getStations.pending, (state, action) => {
+      console.log("pending", action);
+    });
+    builder.addCase(getStations.fulfilled, (state, { payload }) => {
+      console.log("fullfilled", payload);
+      state.names = payload;
+    });
+    builder.addCase(getStations.rejected, (state, action) => {
+      console.log("rejected", action);
+    });
   },
 });
 
