@@ -1,11 +1,18 @@
 @import "../../scss/colors.scss";
 
 .stationList {
+  font-size: 4.4rem;
   display: flex;
   justify-content: space-between;
   color: $lighterGray;
   border-color: $lighterGray;
   border-bottom: 2px solid;
-  padding: 1rem;
+  padding: 4rem;
   cursor: pointer;
+
+  span {
+    &:last-child {
+      font-weight: 700;
+    }
+  }
 }

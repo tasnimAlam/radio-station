@@ -5,18 +5,27 @@
   flex-direction: column;
   text-align: center;
   background-color: $primaryGray;
-  padding: 1rem;
-  border-radius: 0 0 2rem 2rem;
+  padding: 4rem;
+  border-radius: 0 0 4rem 4rem;
   border-bottom: $darkerGray;
-  width: 30rem;
+  width: 64rem;
   box-sizing: border-box;
-  min-height: 7rem;
+  height: 16rem;
 }
 
 .title {
   color: $secondaryYellow;
+	font-size: 2.2rem;
+	line-height: 4rem;
+	font-weight: bold;
 }
 
 .currentFM {
   color: $lighterGray;
+	font-size: 4.4rem;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	display: inline-block;
+	line-height: 5rem;
 }
