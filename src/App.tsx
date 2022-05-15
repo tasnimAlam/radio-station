@@ -1,35 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./App.scss";
-import { AppDispatch, RootState } from "./app/store";
-import { BottomBar } from "./components/BottomBar/BottomBar";
-import { StationItem } from "./components/StationItem/StationItem";
-import { StationHeader } from "./components/StationHeader/StationHeader";
-import { StationCard } from "./components/StationCard/StationCard";
-import { getStations } from "./feature/stationSlice";
+import React from "react";
+import { RadioWidget } from "./screens/RadioWidget/RadioWidget";
 
 function App() {
-  const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(getStations());
-  }, [dispatch]);
-
-  const stations = useSelector((state: RootState) => state.stations.names);
-  const currentFM = useSelector((state: RootState) => state.stations.currentFM);
-
   return (
-    <div className="appContainer">
-      <StationHeader />
-      <div className="stationContainer">
-        {stations.map((station) => (
-          <div key={station.id}>
-            <StationItem {...station} />
-            {currentFM && currentFM === station.name && <StationCard />}
-          </div>
-        ))}
-      </div>
-      <BottomBar currentFM={currentFM} />
+    <div>
+      <RadioWidget />
     </div>
   );
 }
