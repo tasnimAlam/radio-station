@@ -17,7 +17,7 @@ export const RadioWidget = () => {
 
   const stations = useSelector((state: RootState) => state.stations.names);
   const currentFM = useSelector((state: RootState) => state.stations.currentFM);
-	
+
   return (
     <div className={styles.widgetContainer}>
       <StationHeader />

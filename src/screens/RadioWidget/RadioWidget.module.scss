@@ -19,6 +19,8 @@
   width: 64rem;
   box-sizing: border-box;
   padding: 3rem 4rem;
+  border-bottom: 2px solid;
+  border-color: $darkerGray;
 
   -webkit-scrollbar {
     display: none;
